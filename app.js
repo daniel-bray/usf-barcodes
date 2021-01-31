@@ -30,6 +30,7 @@ document.querySelector('#palletCodeBtn').addEventListener('click', generatePalle
 document.querySelector('#clearPalletButton').addEventListener('click', clearPalletData)
 
 function generateSingle(e) {
+    e.preventDefault()
   let itemCode = document.querySelector('#singleCode').value
   itemCode = ('000000' + itemCode).slice(-16)
   let tr = document.createElement('tr')
@@ -41,11 +42,11 @@ function generateSingle(e) {
             `
   document.getElementById('barcodeTableData').append(tr, output, td)
 
-  e.preventDefault()
   saveLabel(itemCode);
 }
 
 function generateMultiple(e) {
+    e.preventDefault()
   let itemCode = document.querySelector('#multipleCode').value
   let quantity = document.querySelector('#quantity').value
 
@@ -61,17 +62,16 @@ function generateMultiple(e) {
     output.src = `
     https://barcode.tec-it.com/barcode.ashx?data=${itemCode}&code=PDF417&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0' alt='Barcode Generator TEC-IT
   `
-    e.preventDefault()
     saveLabel(itemCode)
     itemCode++
     quantity--
     document.getElementById('multipleTableData').append(tr, output, td, p)
   }
 
-  // e.preventDefault()
 }
 
 function generatePallet(e) {
+    e.preventDefault()
   let pallets = document.getElementById('palletNumber').value
   let palletArray = pallets.split(',')
   let stop = document.getElementById('stopNumber').value
@@ -97,12 +97,10 @@ function generatePallet(e) {
     output.src = `
     https://barcode.tec-it.com/barcode.ashx?data=${itemCode}&code=PDF417&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0' alt='Barcode Generator TEC-IT
   `
-    e.preventDefault()
     saveLabel(itemCode)
     document.getElementById('displayPalletData').append(tr, output, td, p)
   }
 
-  // e.preventDefault()
 }
 
 function clearSingleData() {
