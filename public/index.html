@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Page</title>
+  <!-- Latest compiled and minified CSS -->
+<link href='https://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.5/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.5/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.5/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="custom.css">
+  </link>
+
+</head>
+
+<body  id="home">
+  <nav class="navbar navbar-custom">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed navbarButton" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#home">Daniel Bray</a>
+      </div>
+
+        <!-- Add links and float on right side of navbar -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right" id="navList">
+          <li class="navListItem"><a href="#home">Home</a></li>
+          <li class="navListItem"><a href="#about">About</a></li>
+          <li class="navListItem"><a href="#projects">Projects</a></li>
+          <li class="navListItem"><a href="#contacts">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </nav>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <div class="jumbotron"> <!-- HOME -->
+    <div class="container-fluid jumboText">
+      <h3>Thank you for visiting my portfolio page. Here you will find information about my past and present work.</h3>
+      <h3>Feel free to look around and contact me at any of the links at the bottom of the page.</h3>
+    </div>
+  </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+  <div class="container-fluid" id="about">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="images/meandeg.jpg" class="img-responsive profilePic"/>
+      </div>
+      <div class="col-md-9 aboutText">This is me and my littlest little one on her first birthday. I have been a professional truck driver for a little more than nine years. While I'm not on the road, spending time with my family, or reading dead theologians, I can probably be found coding. It has been a hobby of mine for the last couple of years. Hopefully one day it will be a source of income. My experience includes: HTML, CSS, Javascript, jQuery, Bootstrap, PhP, mySQL, and C++.</div>
+    </div>
+
+    <div class="container projectText" id="projects"><h1>Projects</h1></div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <img src="images/barcodeGenerator.jpg" class="img-responsive">
+          <div class="caption">
+            <h3>Barcode Generator</h3>
+            <p>A web application built with PHP for me and my coworkers so that we can access any missing labels we may need throughout our workday.</p>
+            <p><a href="/barcodeGenerator.html" target="_blank" class="btn btn-primary">Check it out!</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <img src="images/usfpay.jpg" class="img-responsive">
+            <div class="caption">
+              <h3>Paycheck Calculator</h3>
+              <p>Another web application built with PHP for me and my coworkers so that we can calculate our gross pay in advance.</br></p>
+              <p><a href="/usfpay.php" target="_blank" class="btn btn-primary">Check it out!</a></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container contactButtons" id="contacts">
+    <h3 class="findMe" id="contacts">Find me on the web:</h3>
+      <div class="row">
+        <a href="https://www.facebook.com/braydj" target="_blank"><button type="button" class="btn btn-facebook buttonHover"><i class="fa fa-facebook"></i> facebook</button></a>
+        <a href="http://twitter.com/danieljacobbray" target="_blank"><button type="button" class="btn btn-twitter buttonHover"><i class="fa fa-twitter"></i> Twitter</button></a>
+        <a href="https://github.com/kekkerslawl" target="_blank"><button type="button" class="btn btn-github buttonHover"><i class="fa fa-github"></i> GitHub</button></a>
+        <a href="https://www.linkedin.com/in/braydj" target="_blank"><button type="button" class="btn btn-linkedin buttonHover"><i class="fa fa-linkedin"></i> LinkedIn</button></a>
+        <a href="http://freecodecamp.com/kekkerslawl" target="_blank"><button type="button" class="btn btn-freecodecamp buttonHover"><i class="fa fa-fire"></i> FreeCodeCamp</button></a>
+      </div>
+    </div>    
+  </div>
+  <!-- Latest compiled and minified JavaScript -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
 </html>
