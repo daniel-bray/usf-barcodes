@@ -61,13 +61,14 @@ function generateMultiple(e) {
     output.src = `
     https://barcode.tec-it.com/barcode.ashx?data=${itemCode}&code=PDF417&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0' alt='Barcode Generator TEC-IT
   `
+    e.preventDefault()
     saveLabel(itemCode)
     itemCode++
     quantity--
     document.getElementById('multipleTableData').append(tr, output, td, p)
   }
 
-  e.preventDefault()
+  // e.preventDefault()
 }
 
 function generatePallet(e) {
@@ -96,11 +97,12 @@ function generatePallet(e) {
     output.src = `
     https://barcode.tec-it.com/barcode.ashx?data=${itemCode}&code=PDF417&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0' alt='Barcode Generator TEC-IT
   `
+    e.preventDefault()
     saveLabel(itemCode)
     document.getElementById('displayPalletData').append(tr, output, td, p)
   }
 
-  e.preventDefault()
+  // e.preventDefault()
 }
 
 function clearSingleData() {
