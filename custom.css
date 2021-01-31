@@ -1,0 +1,143 @@
+/*  colors:
+light blue: #00a2c5;
+yellow: #fff6be;
+dark blue: #1781a9;
+green: #6afbbd;
+gray green: #5a8487;
+*/
+
+body {
+  background-color: #AFEEEE;
+  font-family: 'Josefin Slab', serif;
+  color: #383838;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+.navbar-custom {
+  background-color: #fff6ab;
+/*  background-color: #C8AD7F;
+*/
+}
+.navbarButton {
+  background-color: #faebd7;
+}
+.navbarButton:hover {
+  background-color: #383838;
+}
+.icon-bar {
+  background-color: #5a8487;
+}
+.icon-bar span:hover {
+  background-color: #faebd7;
+}
+
+.navbar-brand{
+  color: black;
+  font-size: 1.6em;
+}
+
+.navbar-brand:hover{
+  color: #383838;
+}
+.navListItem a{
+  color: black;
+  font-size: 1.3em;
+}
+.navListItem a:hover {
+  color: #383838;
+}
+
+
+.jumbotron {
+  position: relative;
+  background-color: #C8AD7F;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  margin-top: -30px;
+}
+
+.jumboText {
+  color: #383838;
+  text-align: center;
+}
+
+.aboutText {
+  font-size: 1.5em;
+  text-align: justify;
+}
+.profilePic {
+  border: 3px solid #fff6be;
+  border-radius: 25px;
+}
+.projectText {
+  text-align: center;
+}
+.projectImage {
+  vertical-align: center;
+}
+
+.contactButtons {
+  text-align: center;
+}
+.findMe{
+  margin-bottom: 0px;
+}
+.buttonHover {
+  margin: 2px;
+}
+.btn-email {
+  background-color: #1781a9;
+  color: #faebd7;
+}
+.btn-facebook {
+  background-color: #3b5998;
+  color: #faebd7;
+}
+
+.btn-twitter{
+  background-color: #55acee;
+  color: #faebd7;
+}
+
+.btn-github {
+  background-color: #999999;
+  color: #faebd7;
+}
+
+
+
+.btn-linkedin {
+  background-color: #00a0dc;
+  color: #faebd7;
+}
+
+.btn-freecodecamp {
+  background-color: #4A2B0F;
+  color: #faebd7;
+}
+.btn-freecodecamp:hover {
+  background-color: #4A2B0F;
+  color: #fff6be;
+}
+.row {
+  text-align: center;
+}
+
+/*.btn-github:hover {
+  background-color: #5a8487;
+  color: #fff6be;
+}
+.btn-linkedin:hover {
+  background-color: #5a8487;
+  color: #fff6be;
+}
+
+
+.buttonHover:hover {
+  background-color: #5a8487;
+  color: #fff6be;
+}*/
