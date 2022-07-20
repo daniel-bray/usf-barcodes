@@ -115,8 +115,11 @@ function generatePallet(e) {
   // let day = ("00" + d.getDate()).slice(-2);
 
   for (let i = 0; i < palletArray.length; i++) {
-    itemCode = palletArray[i] + year + month + day + division + route + stop;
+    //itemCode = palletArray[i] + year + month + day + division + route + stop;
+    itemCode = palletArray[i] + month + day + division + route + stop;
+    
     let tr = document.createElement("tr");
+
     let td = document.createElement("td");
     let p = document.createElement("p");
     p.className = "s12 center";
