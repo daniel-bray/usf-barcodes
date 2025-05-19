@@ -49,29 +49,54 @@
       <div class="row">
         <div class="col s12 m8 l4">
           <ul class="collapsible">
-            <li>
+            <li class="active">
               <div class="collapsible-header sm-6">
                 <i class="material-icons"> keyboard_arrow_right </i>
-                Generate Single Barcodes
+                Generate Single Barcode
               </div>
               <div class="collapsible-body">
-                <div class="row">
+                <!-- <div class="row">
                   <a
                     class="btn-flat waves-effect waves-light modal-trigger"
                     data-toggle="modal"
                     href="#itemModal"
                     >Tap here for help</a
                   >
-                </div>
+                </div> -->
                 <div class="row">
                   <form class="col s12">
                     <div class="row">
-                      <div class="input-field col s12">
+                      <div class="row">
+                      <div class="input-field col s6">
                         <input
-                          placeholder="Item Information"
-                          id="singleCode"
+                          placeholder="Order"
+                          id="orderNumber"
                           type="number"
                         />
+                      </div>
+                      <div class="input-field col s6">
+                        <input
+                          placeholder="LN Number"
+                          id="lineNumber"
+                          type="number"
+                        />
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="input-field col s6">
+                        <input
+                          placeholder="Item Number"
+                          id="itemNumber"
+                          type="number"
+                        />
+                      </div>
+                      <div class="input-field col s6">
+                        <input
+                          placeholder="Item Qty"
+                          id="quantityNumber"
+                          type="number"
+                        />
+                      </div>
                       </div>
                       <button
                         class="btn waves-effect waves-light"
@@ -116,31 +141,59 @@
                 Multiple Barcodes
               </div>
               <div class="collapsible-body">
-                <div class="row">
+                <!-- <div class="row">
                   <a
                     class="btn-flat waves-effect waves-light modal-trigger"
                     data-toggle="modal"
                     href="#multiItemModal"
                     >Tap here for help</a
                   >
-                </div>
+                </div> -->
                 <div class="row">
                   <form class="col s12">
                     <div class="row">
-                      <div class="input-field col s8">
+                      <div class="row">
+                      <div class="input-field col s6">
                         <input
+                          placeholder="Order"
+                          id="orderNumberMult"
                           type="number"
-                          placeholder="Item Information"
-                          id="multipleCode"
                         />
                       </div>
-                      <div class="input-field col s4">
+                      <div class="input-field col s6">
+                        <input
+                          placeholder="LN Number"
+                          id="lineNumberMult"
+                          type="number"
+                        />
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="input-field col s6">
+                        <input
+                          placeholder="Item Number"
+                          id="itemNumberMult"
+                          type="number"
+                        />
+                      </div>
+                      <div class="input-field col s6">
+                        <input
+                          placeholder="Item Qty"
+                          id="quantityNumberMult"
+                          type="number"
+                        />
+                      </div>
+                      </div>
+                      <div class="row">
+<div class="input-field col s4">
                         <input
                           type="number"
                           placeholder="Quantity"
                           id="quantity"
                         />
                       </div>
+                      </div>
+                      
                       <button
                         class="btn waves-effect waves-light"
                         style="background-color: #5a881c"
@@ -178,7 +231,7 @@
                 </div>
               </div>
             </li>
-            <li class="active">
+            <li>
               <div class="collapsible-header">
                 <i class="material-icons"> keyboard_arrow_right </i>
                 Generate Pallet Barcode
