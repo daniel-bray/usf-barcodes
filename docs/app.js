@@ -21,6 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // : localStorage.getItem('division')
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+  const storedOrderNumber = localStorage.getItem("orderNumber");
+  if (storedOrderNumber) {
+    const singleInput = document.querySelector("#orderNumber");
+    const multipleInput = document.querySelector("#orderNumberMult");
+    if (singleInput) singleInput.value = storedOrderNumber;
+    if (multipleInput) multipleInput.value = storedOrderNumber;
+  }
+});
+
+
 document.querySelector("select").addEventListener("change", setDivision);
 
 document
@@ -85,7 +96,9 @@ function setDivision(e) {
 function generateSingle(e) {
   e.preventDefault();
 
-  let orderNumber = document.querySelector("#orderNumber").value.padStart(8, '0');
+  let orderInput = document.querySelector("#orderNumber");
+  let orderNumber = orderInput.value.padStart(8, '0');
+  localStorage.setItem("orderNumber", orderInput.value); // store raw value
   let lineNumber = document.querySelector("#lineNumber").value.padStart(4, '0');
   let itemNumber = document.querySelector("#itemNumber").value.padStart(6, '0');
   let quantity = document.querySelector("#quantityNumber").value.padStart(4, '0');
@@ -98,6 +111,8 @@ function generateSingle(e) {
 
   let td = document.createElement("td");
   td.style.textAlign = "center";
+  td.style.paddingBottom = "3em"; // or "10px", "20px", etc.
+
 
   let output = document.createElement("img");
   output.src = `https://barcode.tec-it.com/barcode.ashx?data=${itemCode}&code=Code128&text=true&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0`;
@@ -112,7 +127,9 @@ function generateSingle(e) {
 function generateMultiple(e) {
   e.preventDefault();
 
-  let orderNumber = document.querySelector("#orderNumberMult").value.padStart(8, '0');
+  let orderInput = document.querySelector("#orderNumberMult");
+  let orderNumber = orderInput.value.padStart(8, '0');
+  localStorage.setItem("orderNumber", orderInput.value); // store raw value
   let lineNumber = document.querySelector("#lineNumberMult").value.padStart(4, '0');
   let itemNumber = document.querySelector("#itemNumberMult").value.padStart(6, '0');
   let itemQuantity = document.querySelector("#quantityNumberMult").value.padStart(4, '0');
@@ -130,6 +147,8 @@ function generateMultiple(e) {
 
   let td = document.createElement("td");
   td.style.textAlign = "center"; // Optional: center image
+  td.style.paddingBottom = "3em"; // or "10px", "20px", etc.
+
 
   let output = document.createElement("img");
   output.src = `https://barcode.tec-it.com/barcode.ashx?data=${currentCode}&code=Code128&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0`;

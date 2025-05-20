@@ -325,7 +325,12 @@
           </ul>
         </div>
       </div>
+      <button onclick="localStorage.removeItem('orderNumber'); alert('Order number cleared!')">
+  Clear Saved Order Number
+</button>
+
     </div>
+    
     <div id="itemModal" class="modal" tabindex="-1" role="dialog">
       <div class="modal-content">
         <h4>Item Label</h4>
@@ -383,7 +388,7 @@
         >
       </div>
     </div>
-    <script src="firebase.js"></script>
+    <!-- <script src="firebase.js"></script> -->
     <script src="app.js"></script>
     <script type="text/javascript" src="materialize.min.js"></script>
   </body>
